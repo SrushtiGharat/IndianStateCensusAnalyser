@@ -11,12 +11,12 @@ namespace IndianStateCensusAnalyser
             INDIA
         }
         
-        Dictionary<string, CensusDTO> censusDataMap;
+        Dictionary<string, CensusDTO> dataMap;
         public Dictionary<string, CensusDTO> LoadCensusData(string csvPath,Country country,string csvHeader)
         {
             CheckFileExceptions.CheckExceptions(csvPath, country);
-            censusDataMap = new CensusDataDictionary().LoadDictionary(csvPath, country, csvHeader);
-            return censusDataMap;
+            dataMap = new CensusDataDictionary().LoadDictionary(csvPath, country, csvHeader);
+            return dataMap;
         }
     }
 
