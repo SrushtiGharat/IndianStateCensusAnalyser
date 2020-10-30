@@ -5,7 +5,7 @@ namespace IndianStateCensusAnalyser
 {
     public class CheckFileExceptions
     {
-        public static void CheckExceptions(string csvPath, StateCensusAnalyser.Country country)
+        public static void CheckExceptions(string csvPath)
         {
             if (File.Exists(csvPath) == false)
             {
@@ -15,10 +15,7 @@ namespace IndianStateCensusAnalyser
             {
                 throw new CensusAnalyserException("File Path is Improper", CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE);
             }
-            if (country != StateCensusAnalyser.Country.INDIA)
-            {
-                throw new CensusAnalyserException("No such country", CensusAnalyserException.ExceptionType.NO_SUCH_COUNTRY);
-            }
+            
         }
     }
 }

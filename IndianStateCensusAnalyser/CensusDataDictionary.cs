@@ -12,11 +12,11 @@ namespace IndianStateCensusAnalyser
         public Dictionary<string, CensusDTO> dataMap;
         public Dictionary<string, CensusDTO> LoadDictionary(string path,StateCensusAnalyser.Country country, string header)
         {
-            if (country == StateCensusAnalyser.Country.INDIA)
+            if (country != StateCensusAnalyser.Country.INDIA)
             {
-                dataMap = new IndianCensusDictionary().GetDictionary(path, header);
+                throw new CensusAnalyserException("No such country", CensusAnalyserException.ExceptionType.NO_SUCH_COUNTRY);
             }
-            
+            dataMap = new IndianCensusDictionary().GetDictionary(path, header);
             return dataMap;
         }
     }

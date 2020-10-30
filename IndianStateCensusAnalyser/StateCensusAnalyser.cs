@@ -14,7 +14,7 @@ namespace IndianStateCensusAnalyser
         Dictionary<string, CensusDTO> dataMap;
         public Dictionary<string, CensusDTO> LoadCensusData(string csvPath,Country country,string csvHeader)
         {
-            CheckFileExceptions.CheckExceptions(csvPath, country);
+            CheckFileExceptions.CheckExceptions(csvPath);
             dataMap = new CensusDataDictionary().LoadDictionary(csvPath, country, csvHeader);
             return dataMap;
         }
